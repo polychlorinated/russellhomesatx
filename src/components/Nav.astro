@@ -1,0 +1,97 @@
+---
+import { sara, nav } from "../data/site";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header id="site-nav" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+    <a href="/" class="flex flex-col leading-tight">
+      <span class="font-serif text-xl text-white md:text-2xl">Sara + Kevin Russell</span>
+      <span class="text-[10px] font-medium tracking-[0.35em] text-gold-light uppercase">
+        Austin Homes
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            class:list={[
+              "text-xs font-medium tracking-[0.2em] text-white uppercase transition-colors hover:text-gold-light",
+              currentPath === item.href && "text-gold-light",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a
+        href={sara.phoneHref}
+        class="border border-gold px-5 py-2.5 text-xs font-medium tracking-[0.2em] text-white uppercase transition-colors hover:bg-gold"
+      >
+        {sara.phone}
+      </a>
+    </nav>
+
+    <button
+      id="menu-toggle"
+      class="flex h-10 w-10 items-center justify-center text-white lg:hidden"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+      <svg id="icon-close" class="hidden h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden bg-ink/95 backdrop-blur lg:hidden">
+    <nav class="flex flex-col gap-1 px-6 py-6" aria-label="Mobile navigation">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            class="border-b border-white/10 py-3 text-sm font-medium tracking-[0.2em] text-white uppercase"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a href={sara.phoneHref} class="py-3 text-sm font-medium tracking-[0.2em] text-gold-light uppercase">
+        {sara.phone}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("site-nav");
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  toggle?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden", !open);
+    iconClose?.classList.toggle("hidden", open ?? true);
+    toggle.setAttribute("aria-expanded", String(!open));
+  });
+
+  const onScroll = () => {
+    if (window.scrollY > 40) {
+      header?.classList.add("bg-ink/90", "backdrop-blur", "shadow-lg");
+    } else {
+      header?.classList.remove("bg-ink/90", "backdrop-blur", "shadow-lg");
+    }
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>

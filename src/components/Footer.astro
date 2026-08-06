@@ -1,0 +1,128 @@
+---
+import { site, sara, kevin, links, nav } from "../data/site";
+---
+
+<footer class="bg-ink text-white">
+  <!-- Work With Us CTA -->
+  <section class="border-b border-white/10">
+    <div class="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:px-10">
+      <div>
+        <p class="text-xs font-medium tracking-[0.3em] text-gold-light uppercase">
+          {site.name}
+        </p>
+        <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Work With Us</h2>
+        <p class="mt-6 max-w-md text-sm leading-relaxed text-white/70">
+          We offer the highest level of expertise, service, and integrity. Whether you're
+          buying, selling, or leasing in Austin and the surrounding areas, get in touch to
+          get started today.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href={sara.phoneHref}
+            class="bg-gold px-7 py-3 text-xs font-medium tracking-[0.2em] text-white uppercase transition-colors hover:bg-gold-light"
+          >
+            Contact Us
+          </a>
+          <a
+            href={links.linktree}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-white/30 px-7 py-3 text-xs font-medium tracking-[0.2em] text-white uppercase transition-colors hover:border-gold hover:text-gold-light"
+          >
+            All Our Links
+          </a>
+        </div>
+      </div>
+
+      <div class="grid gap-10 sm:grid-cols-2">
+        <div>
+          <h3 class="text-xs font-medium tracking-[0.3em] text-gold-light uppercase">Contact</h3>
+          <ul class="mt-5 space-y-3 text-sm text-white/80">
+            <li>
+              <a href={sara.phoneHref} class="hover:text-gold-light">{sara.phone}</a>
+            </li>
+            <li>
+              <a href={`mailto:${sara.email}`} class="hover:text-gold-light">{sara.email}</a>
+            </li>
+            <li>
+              <a href={sara.compassUrl} target="_blank" rel="noopener noreferrer" class="hover:text-gold-light">
+                Sara Russell — Compass
+              </a>
+            </li>
+            <li>
+              <a href={kevin.compassUrl} target="_blank" rel="noopener noreferrer" class="hover:text-gold-light">
+                Kevin Russell — Compass
+              </a>
+            </li>
+            <li>
+              <a href={links.instagram} target="_blank" rel="noopener noreferrer" class="hover:text-gold-light">
+                @russellhomesatx
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-medium tracking-[0.3em] text-gold-light uppercase">Navigate</h3>
+          <ul class="mt-5 space-y-3 text-sm text-white/80">
+            {
+              nav.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    class="hover:text-gold-light"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brokerage + legal -->
+  <section class="mx-auto max-w-7xl px-6 py-14 lg:px-10">
+    <div class="flex flex-col items-center gap-8 text-center">
+      <div class="flex flex-wrap items-center justify-center gap-10">
+        <a href={site.brokerageUrl} target="_blank" rel="noopener noreferrer">
+          <img src="/holt-logo.png" alt="Holt Residential Group" class="h-14 w-auto" />
+        </a>
+        <img src="/compass-white.png" alt="Compass" class="h-8 w-auto" />
+        <img src="/realtorlogo.png" alt="REALTOR® — Equal Housing Opportunity" class="h-14 w-auto" />
+      </div>
+
+      <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs tracking-wide text-white/60">
+        <li>
+          <a href={links.trecConsumerNotice} download class="hover:text-gold-light">
+            TREC Consumer Protection Notice
+          </a>
+        </li>
+        <li>
+          <a href={links.trecIabs} download class="hover:text-gold-light">
+            Sara Russell — Information About Brokerage Services
+          </a>
+        </li>
+        <li>
+          <a href={links.kevinIabs} download class="hover:text-gold-light">
+            Kevin Russell — Information About Brokerage Services
+          </a>
+        </li>
+      </ul>
+
+      <p class="max-w-4xl text-xs leading-relaxed text-white/50">
+        Sara + Kevin Russell are real estate agents affiliated with Compass, working with
+        Holt Residential Group. Compass is a licensed real estate broker and abides by
+        federal, state, and local laws. Equal housing opportunity. All material presented
+        herein is intended for informational purposes only. Information is compiled from
+        sources deemed reliable but is subject to errors, omissions, changes in price,
+        condition, sale, or withdrawal without notice. All measurements and square footages
+        are approximate. This is not intended to solicit property already listed.
+      </p>
+
+      <p class="text-xs text-white/40">Copyright © {new Date().getFullYear()} {site.name}</p>
+    </div>
+  </section>
+</footer>

@@ -1,0 +1,195 @@
+---
+import Base from "../layouts/Base.astro";
+import { sara, links } from "../data/site";
+
+const neighborhoods = [
+  {
+    name: "Zilker",
+    region: "Central Austin",
+    image: "/neighborhood-zilker.jpg",
+    blurb: "Where natural beauty meets urban convenience — a vibrant blend of outdoor adventure, cultural events, and lively community.",
+  },
+  {
+    name: "East Side",
+    region: "East Austin",
+    image: "/neighborhood-eastside.jpg",
+    blurb: "Vibrant, eclectic, and full of energy — where creative culture meets urban living with artistic flair and rich history.",
+  },
+  {
+    name: "Seaholm District",
+    region: "Downtown Austin",
+    image: "/neighborhood-seaholm.jpg",
+    blurb: "Modern, sleek, and effortlessly urban — Austin's premier downtown neighborhood of luxury high-rises and skyline views.",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Kevin crushed my home search. He understood what I needed in a home and what I wanted for my lifestyle, and he found a South Austin property that best matched where I needed to be. 5 years later, I couldn't be happier with my choice.",
+    name: "Andrew C.",
+  },
+  {
+    quote:
+      "Kevin was incredible to work with! As first time home buyers, it was great to have someone thoroughly, knowledgeably and articulately walk us through the process. Buying our first home wouldn't have happened without him.",
+    name: "Evan A.",
+  },
+  {
+    quote:
+      "Wow! Kevin thank you for the amount of effort put into helping us close on time and secure the right home for our family. Kevin is willing to go out of his way to ensure your family is taken care of. Extremely knowledgeable about the market and every zip code near Austin. Courteous, punctual and professional!",
+    name: "Hector A.",
+  },
+];
+---
+
+<Base>
+  <!-- Hero -->
+  <section class="relative flex min-h-svh items-center justify-center overflow-hidden bg-ink">
+    <img
+      src="/hero-austin.jpg"
+      alt="Austin, Texas skyline"
+      class="absolute inset-0 h-full w-full object-cover opacity-50"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/30 to-ink"></div>
+
+    <div class="relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-20 text-center text-white">
+      <p class="text-xs font-medium tracking-[0.35em] text-gold-light uppercase">
+        Buy &bull; Sell &bull; Lease &nbsp;|&nbsp; Austin + Surrounding Areas
+      </p>
+      <h1 class="mt-6 font-serif text-6xl leading-[1.05] md:text-8xl lg:text-9xl">
+        Diligently Guiding You Home
+      </h1>
+      <p class="mx-auto mt-8 max-w-2xl text-sm leading-relaxed text-white/70 md:text-base">
+        Finding your home can be an exciting journey. With nearly two decades of Austin life,
+        we can match you with the right property for your needs — and navigate you through
+        every step of your home search.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a
+          href={sara.phoneHref}
+          class="bg-gold px-8 py-3.5 text-xs font-medium tracking-[0.25em] text-white uppercase transition-colors hover:bg-gold-light"
+        >
+          Let's Connect
+        </a>
+        <a
+          href={links.compassSearch}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border border-white/40 px-8 py-3.5 text-xs font-medium tracking-[0.25em] text-white uppercase transition-colors hover:border-gold hover:text-gold-light"
+        >
+          Search Homes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Make Austin Your Home -->
+  <section class="bg-white">
+    <div class="mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 lg:grid-cols-2 lg:px-10">
+      <div class="relative">
+        <img
+          src="/russell-family.webp"
+          alt="The Russell family"
+          class="aspect-[4/3] w-full object-cover"
+        />
+        <div class="absolute -right-4 -bottom-4 -z-10 hidden h-full w-full border border-gold lg:block"></div>
+      </div>
+      <div>
+        <p class="text-xs font-medium tracking-[0.3em] text-gold uppercase">Make Austin Your Home</p>
+        <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">
+          From Lake Travis to Barton Springs, claim your domain.
+        </h2>
+        <p class="mt-6 text-sm leading-relaxed text-ink/70 md:text-base">
+          High-rise condos, new construction in-fills, and suburban gems all offer great
+          benefits to home buyers. Looking for a bungalow where you can take your Golden
+          Retriever for a daily swim? A condo with stunning views, minutes from dozens of
+          award-winning restaurants? Top-rated schools right in your neighborhood? Austin
+          really has it all — we're here to help you make sense of everything and narrow down
+          your numerous options.
+        </p>
+        <p class="mt-4 text-sm leading-relaxed text-ink/70 md:text-base">
+          As a husband-and-wife team with Holt Residential Group at Compass, we're trusted
+          advisors and passionate advocates — known for integrity, communication, and a
+          client-first approach in Austin's competitive market.
+        </p>
+        <a
+          href="/about"
+          class="mt-8 inline-block border border-ink px-8 py-3.5 text-xs font-medium tracking-[0.25em] uppercase transition-colors hover:bg-ink hover:text-white"
+        >
+          Meet Sara + Kevin
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods -->
+  <section class="bg-cream">
+    <div class="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p class="text-xs font-medium tracking-[0.3em] text-gold uppercase">Neighborhood Guide</p>
+          <h2 class="mt-4 font-serif text-4xl md:text-5xl">Explore Austin</h2>
+          <p class="mt-4 max-w-xl text-sm text-ink/60">
+            You start and end each day in your neighborhood — find the spot that fits your vibe.
+          </p>
+        </div>
+        <a
+          href="/neighborhoods"
+          class="border border-ink px-7 py-3 text-xs font-medium tracking-[0.25em] uppercase transition-colors hover:bg-ink hover:text-white"
+        >
+          View All
+        </a>
+      </div>
+
+      <div class="mt-14 grid gap-8 md:grid-cols-3">
+        {
+          neighborhoods.map((hood) => (
+            <a href="/neighborhoods" class="group block">
+              <div class="relative overflow-hidden">
+                <img
+                  src={hood.image}
+                  alt={`${hood.name}, Austin`}
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
+                <div class="absolute right-0 bottom-0 left-0 p-6 text-white">
+                  <p class="text-[10px] font-medium tracking-[0.3em] text-gold-light uppercase">
+                    {hood.region}
+                  </p>
+                  <h3 class="mt-1 font-serif text-3xl">{hood.name}</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-ink/60">{hood.blurb}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+      <p class="text-center text-xs font-medium tracking-[0.3em] text-gold uppercase">Testimonials</p>
+      <h2 class="mt-4 text-center font-serif text-4xl md:text-5xl">What Our Clients Say</h2>
+
+      <div class="mt-16 grid gap-8 md:grid-cols-3">
+        {
+          testimonials.map((t) => (
+            <figure class="flex flex-col border border-sand bg-cream p-8">
+              <svg class="h-8 w-8 text-gold" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9.5 8.5c-2.5.8-4 2.6-4 5.2 0 1.9 1.3 3.3 3 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1-2.6-2.5-2.7.3-1.2 1.2-2 2.4-2.5L9.5 8.5zm8 0c-2.5.8-4 2.6-4 5.2 0 1.9 1.3 3.3 3 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1-2.6-2.5-2.7.3-1.2 1.2-2 2.4-2.5l-1.7-.5z" />
+              </svg>
+              <blockquote class="mt-5 flex-1 text-sm leading-relaxed text-ink/70 italic">
+                {t.quote}
+              </blockquote>
+              <figcaption class="mt-6 text-xs font-medium tracking-[0.25em] uppercase">
+                {t.name}
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,191 @@
+---
+import Base from "../layouts/Base.astro";
+import { site, sara, kevin, links } from "../data/site";
+---
+
+<Base
+  title="Meet Sara + Kevin Russell | Austin Real Estate Agents"
+  description="Meet Sara and Kevin Russell — Austin real estate agents with Holt Residential Group at Compass, serving buyers, sellers, and renters across Austin and surrounding areas."
+>
+  <!-- Page hero -->
+  <section class="relative flex items-end overflow-hidden bg-ink">
+    <img
+      src="/austin-lake.jpg"
+      alt="Austin, Texas"
+      class="absolute inset-0 h-full w-full object-cover opacity-40"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/60 to-ink"></div>
+    <div class="relative z-10 mx-auto w-full max-w-7xl px-6 pt-48 pb-16 lg:px-10">
+      <p class="text-xs font-medium tracking-[0.35em] text-gold-light uppercase">
+        Austin Real Estate Experts
+      </p>
+      <h1 class="mt-4 font-serif text-5xl text-white md:text-7xl">Meet Sara + Kevin</h1>
+    </div>
+  </section>
+
+  <!-- Team intro -->
+  <section class="bg-cream">
+    <div class="mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 lg:grid-cols-2 lg:px-10">
+      <div>
+        <p class="text-xs font-medium tracking-[0.3em] text-gold uppercase">
+          {site.brokerage} at {site.broker}
+        </p>
+        <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">
+          A husband-and-wife team, diligently guiding you home.
+        </h2>
+        <p class="mt-6 text-sm leading-relaxed text-ink/70 md:text-base">
+          Sara and Kevin Russell combine deep local knowledge with a hospitality-driven,
+          client-first approach. With nearly two decades of Austin life, they focus on the
+          downtown Austin condo market and the neighborhoods south of Lady Bird Lake — and
+          serve buyers, sellers, and renters across Austin and the surrounding areas.
+        </p>
+        <p class="mt-4 text-sm leading-relaxed text-ink/70 md:text-base">
+          They operate their business by the Golden Rule: clear communication, honest
+          guidance, and genuine relationship building on every transaction.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href={sara.phoneHref}
+            class="bg-gold px-8 py-3.5 text-xs font-medium tracking-[0.25em] text-white uppercase transition-colors hover:bg-gold-light"
+          >
+            Let's Connect
+          </a>
+          <a
+            href={links.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-ink px-8 py-3.5 text-xs font-medium tracking-[0.25em] uppercase transition-colors hover:bg-ink hover:text-white"
+          >
+            @russellhomesatx
+          </a>
+        </div>
+      </div>
+      <img
+        src="/russell-family.webp"
+        alt="The Russell family"
+        class="aspect-[4/3] w-full object-cover"
+      />
+    </div>
+  </section>
+
+  <!-- Sara bio -->
+  <section class="bg-white">
+    <div class="mx-auto grid max-w-7xl items-start gap-14 px-6 py-24 lg:grid-cols-5 lg:px-10">
+      <div class="lg:col-span-2">
+        <img
+          src={sara.headshot}
+          alt="Sara Russell"
+          class="aspect-[4/5] w-full object-cover"
+        />
+        <div class="mt-6">
+          <h3 class="font-serif text-3xl">{sara.name}</h3>
+          <p class="mt-1 text-xs font-medium tracking-[0.25em] text-gold uppercase">
+            {sara.title} | Compass
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-ink/80">
+            <li>
+              M: <a href={sara.phoneHref} class="hover:text-gold">{sara.phone}</a>
+            </li>
+            <li>
+              <a href={`mailto:${sara.email}`} class="hover:text-gold">{sara.email}</a>
+            </li>
+          </ul>
+          <a
+            href={sara.compassUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-block border border-ink px-5 py-2.5 text-xs font-medium tracking-[0.2em] uppercase transition-colors hover:bg-ink hover:text-white"
+          >
+            Compass Profile
+          </a>
+        </div>
+      </div>
+      <div class="space-y-5 text-sm leading-relaxed text-ink/70 md:text-base lg:col-span-3">
+        <p>
+          Sara Russell came to real estate the same way she approached her 15 years in
+          education: with a genuine desire to help people navigate something that matters
+          deeply to them.
+        </p>
+        <p>
+          After more than 25 years calling Austin home, Sara brings something no amount of
+          sales experience can manufacture. She has watched neighborhoods transform, seen
+          families put down roots, and witnessed Austin evolve into one of the most dynamic
+          real estate markets in the country. That perspective shapes how she listens to
+          clients, how she thinks about value, and how she advises on decisions that go
+          beyond price per square foot.
+        </p>
+        <p>
+          Her time in the classroom built skills that translate directly into real estate:
+          breaking down complex information into clear next steps, staying calm when the
+          stakes are high, and never losing sight of the person in front of her. Buying or
+          selling a home is one of the most significant decisions most people make, and Sara
+          treats it that way. Sara is committed to showing up fully prepared and deeply
+          attentive for every client she works with.
+        </p>
+        <p>
+          When she is not working, Sara can be found exploring Austin's restaurant scene,
+          traveling with her family, cheering on her teenagers, or getting lost in a good
+          book.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kevin bio -->
+  <section class="bg-cream">
+    <div class="mx-auto grid max-w-7xl items-start gap-14 px-6 py-24 lg:grid-cols-5 lg:px-10">
+      <div class="space-y-5 text-sm leading-relaxed text-ink/70 md:text-base lg:order-2 lg:col-span-3">
+        <p>
+          Kevin Russell initially whet his appetite for real estate while watching his older
+          brother develop large multifamily apartments at a national level. He holds an
+          Advertising degree from the University of Illinois and found himself drawn to
+          hospitality soon after university — holding guest service positions with Hilton,
+          Fairmont, and the Four Seasons brand of hotels and residences.
+        </p>
+        <p>
+          Kevin took those hospitality skills to a role with the sales team at the Austin
+          Proper Residences, giving him a glimpse into Austin's real estate development world.
+          He now works with Holt Residential Group at Compass, focusing on the downtown Austin
+          condo market and the neighborhoods south of Lady Bird Lake.
+        </p>
+        <p>
+          A former endurance athlete with multiple Ironman finishes, Kevin is a 2x Boston
+          Marathon finisher and 3x NYC Marathon qualifier. He knows what it means to start
+          something and see it through to completion at a high level — whether that's a race
+          or the buying and selling of a home, he meets every transaction with diligence.
+        </p>
+        <p>
+          Kevin lives in South Austin with his wife Sara and their two children — plus an old,
+          grumpy bulldog named Earl. He enjoys family time, camping, boating, and vintage cars
+          and motorcycles.
+        </p>
+      </div>
+      <div class="lg:order-1 lg:col-span-2">
+        <img
+          src={kevin.headshot}
+          alt="Kevin Russell"
+          class="aspect-[4/5] w-full object-cover"
+        />
+        <div class="mt-6">
+          <h3 class="font-serif text-3xl">{kevin.name}</h3>
+          <p class="mt-1 text-xs font-medium tracking-[0.25em] text-gold uppercase">
+            {kevin.title} | Compass
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-ink/80">
+            <li>
+              M: <a href={kevin.phoneHref} class="hover:text-gold">{kevin.phone}</a>
+            </li>
+          </ul>
+          <a
+            href={kevin.compassUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-block border border-ink px-5 py-2.5 text-xs font-medium tracking-[0.2em] uppercase transition-colors hover:bg-ink hover:text-white"
+          >
+            Compass Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
