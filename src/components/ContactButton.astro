@@ -1,0 +1,19 @@
+---
+import { sara } from "../data/site";
+
+interface Props {
+  label: string;
+  class?: string;
+}
+
+const { label, class: className } = Astro.props;
+---
+
+<!-- tel: links do nothing in desktop browsers, so show a phone link on
+     mobile widths and a mailto link at md (768px) and up instead. -->
+<a href={sara.phoneHref} class:list={[className, "md:hidden"]}>
+  {label}
+</a>
+<a href={`mailto:${sara.email}`} class:list={[className, "hidden md:inline-block"]}>
+  {label}
+</a>

@@ -1,5 +1,6 @@
 ---
 import { site, sara, kevin, links, nav } from "../data/site";
+import ContactButton from "./ContactButton.astro";
 ---
 
 <footer class="bg-ink text-white">
@@ -17,12 +18,10 @@ import { site, sara, kevin, links, nav } from "../data/site";
           get started today.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a
-            href={sara.phoneHref}
+          <ContactButton
+            label="Contact Us"
             class="bg-gold px-7 py-3 text-xs font-medium tracking-[0.2em] text-white uppercase transition-colors hover:bg-gold-light"
-          >
-            Contact Us
-          </a>
+          />
           <a
             href={links.linktree}
             target="_blank"

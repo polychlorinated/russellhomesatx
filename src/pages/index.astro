@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
-import { sara, links } from "../data/site";
+import ContactButton from "../components/ContactButton.astro";
+import { links } from "../data/site";
 
 const neighborhoods = [
   {
@@ -65,12 +66,10 @@ const testimonials = [
         every step of your home search.
       </p>
       <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a
-          href={sara.phoneHref}
+        <ContactButton
+          label="Let's Connect"
           class="bg-gold px-8 py-3.5 text-xs font-medium tracking-[0.25em] text-white uppercase transition-colors hover:bg-gold-light"
-        >
-          Let's Connect
-        </a>
+        />
         <a
           href={links.compassSearch}
           target="_blank"

@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { sara } from "../data/site";
+import ContactButton from "../components/ContactButton.astro";
 
 const neighborhoods = [
   {
@@ -55,12 +55,10 @@ const neighborhoods = [
         We've curated some of the best of what different parts of ATX have to offer. You start
         and end each day in your neighborhood — so why not find a spot that you love?
       </p>
-      <a
-        href={sara.phoneHref}
-        class="mt-8 inline-block bg-gold px-8 py-3.5 text-xs font-medium tracking-[0.25em] text-white uppercase transition-colors hover:bg-gold-light"
-      >
-        Let's Connect
-      </a>
+      <ContactButton
+        label="Let's Connect"
+        class="mt-8 bg-gold px-8 py-3.5 text-xs font-medium tracking-[0.25em] text-white uppercase transition-colors hover:bg-gold-light"
+      />
     </div>
   </section>
 

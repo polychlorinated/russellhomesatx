@@ -1,5 +1,6 @@
 ---
 import { sara, nav } from "../data/site";
+import ContactButton from "./ContactButton.astro";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -28,12 +29,10 @@ const currentPath = Astro.url.pathname;
           </a>
         ))
       }
-      <a
-        href={sara.phoneHref}
+      <ContactButton
+        label={sara.phone}
         class="border border-gold px-5 py-2.5 text-xs font-medium tracking-[0.2em] text-white uppercase transition-colors hover:bg-gold"
-      >
-        {sara.phone}
-      </a>
+      />
     </nav>
 
     <button
@@ -64,9 +63,10 @@ const currentPath = Astro.url.pathname;
           </a>
         ))
       }
-      <a href={sara.phoneHref} class="py-3 text-sm font-medium tracking-[0.2em] text-gold-light uppercase">
-        {sara.phone}
-      </a>
+      <ContactButton
+        label={sara.phone}
+        class="py-3 text-sm font-medium tracking-[0.2em] text-gold-light uppercase"
+      />
     </nav>
   </div>
 </header>

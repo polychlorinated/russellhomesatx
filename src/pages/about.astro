@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import ContactButton from "../components/ContactButton.astro";
 import { site, sara, kevin, links } from "../data/site";
 ---
 
@@ -44,12 +45,10 @@ import { site, sara, kevin, links } from "../data/site";
           guidance, and genuine relationship building on every transaction.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a
-            href={sara.phoneHref}
+          <ContactButton
+            label="Let's Connect"
             class="bg-gold px-8 py-3.5 text-xs font-medium tracking-[0.25em] text-white uppercase transition-colors hover:bg-gold-light"
-          >
-            Let's Connect
-          </a>
+          />
           <a
             href={links.instagram}
             target="_blank"
